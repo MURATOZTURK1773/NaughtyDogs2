@@ -1,5 +1,11 @@
 import { z } from "zod";
 
+export type ActiveTab =
+  | "favorited"
+  | "unfavorited"
+  | "none-selected"
+  | "create dog";
+
 export const dogSchema = z.object({
   id: z.number(),
   name: z.string(),
