@@ -23,15 +23,11 @@ const deleteDogRequest = (id: number) => {
   }).then((response) => response.json() as Promise<{ id: number }>);
 };
 
-const patchFavoriteForDog = (dog: Partial<Dog>): Promise<void | Dog> => {
-  const { id, isFavorite } = dog;
-  if (id === undefined) {
-    throw new Error("Dog ID is required for updating favorite status");
-  }
+const patchDog = (id: Dog["id"], dog: Partial<Dog>): Promise<void | Dog> => {
   return fetch(`${baseUrl}/dogs/${id}`, {
     headers: { "Content-type": "application/json" },
     method: "PATCH",
-    body: JSON.stringify({ isFavorite }),
+    body: JSON.stringify({ ...dog }),
   }).then((response) => {
     if (!response.ok) {
       throw new Error("Failed to update favorite status");
@@ -43,6 +39,6 @@ const patchFavoriteForDog = (dog: Partial<Dog>): Promise<void | Dog> => {
 export const Requests = {
   postDog,
   deleteDogRequest,
-  patchFavoriteForDog,
+  patchDog,
   getAllDogs,
 };

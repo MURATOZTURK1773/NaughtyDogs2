@@ -8,12 +8,14 @@ type TabContextType = {
   handleTabClick: (tab: ActiveTab) => void;
   favoritedDogsCount: number;
   unfavoritedDogsCount: number;
+  deleteDog: (id: number) => void;
 };
 
 export const TabsContent = createContext<TabContextType>({} as TabContextType);
 
 export const TabsProvider = ({ children }: { children: ReactNode }) => {
-  const { favoritedDogsCount, unfavoritedDogsCount } = useContext(DogsContext);
+  const { favoritedDogsCount, unfavoritedDogsCount, deleteDog } =
+    useContext(DogsContext);
   const [tab, setTab] = useState<ActiveTab>("none-selected");
 
   const handleTabClick = (tab: ActiveTab) => {
@@ -28,6 +30,7 @@ export const TabsProvider = ({ children }: { children: ReactNode }) => {
         handleTabClick,
         favoritedDogsCount,
         unfavoritedDogsCount,
+        deleteDog,
       }}
     >
       {children}

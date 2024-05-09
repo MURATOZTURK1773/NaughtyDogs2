@@ -4,7 +4,7 @@ import { Requests } from "../api";
 
 type DogsContextType = {
   dogs: Dog[];
-  deleteDog: (id: number) => void;
+  deleteDog: (id: number) => Promise<void>;
   onHeartClick: (id: number, isFavorite: boolean) => void;
   onEmptyHeartClick: (id: number, isFavorite: boolean) => void;
   handleHeartClick: (id: number, isFavorite: boolean) => Promise<void>;
@@ -41,7 +41,6 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
 
   const handleHeartClick = async (id: number, isFavorite: boolean) => {
     try {
-      setIsLoading(true);
       const updatedDogs = dogs.map((prevDog) => {
         if (prevDog.id === id) {
           return { ...prevDog, isFavorite: !prevDog.isFavorite };
@@ -50,20 +49,24 @@ export const DogsProvider = ({ children }: { children: ReactNode }) => {
       });
       setDogs(updatedDogs);
 
-      await Requests.patchFavoriteForDog({
-        id: id,
+      await Requests.patchDog(id, {
         isFavorite: isFavorite,
       });
-      setIsLoading(false);
     } catch (error) {
       console.error("Error updating dog:", error);
-      setIsLoading(false);
       refetchData().catch((error) => console.error(error));
     }
   };
 
   const deleteDog = (id: number) => {
     setDogs((prevdog) => prevdog.filter((dog) => dog.id !== id));
+    return Requests.deleteDogRequest(id)
+      .then(() => {
+        console.log(`dog is deleted`);
+      })
+      .catch((error) => {
+        console.error("Error deleting dog with id ${id}:", error);
+      });
   };
 
   const onEmptyHeartClick = (id: number, isFavorite: boolean) => {

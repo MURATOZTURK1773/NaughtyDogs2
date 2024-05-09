@@ -18,14 +18,14 @@
       "name": "Ana",
       "image": "/assets/boxer.png",
       "description": "Analyst function withdrawal United while",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 4
     },
     {
       "name": "Alfred",
       "image": "/assets/cowardly.png",
       "description": "Northwest DRAM henry applications South",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 5
     },
     {
@@ -46,7 +46,7 @@
       "name": "Asa",
       "image": "/assets/dalmation.png",
       "description": "Minivan Neither Road Movies radian",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 8
     },
     {
@@ -67,7 +67,7 @@
       "name": "Dewayne",
       "image": "/assets/dalmation.png",
       "description": "Security override firewall Southeast apropos Usability orchid barrel",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 11
     },
     {
@@ -88,7 +88,7 @@
       "name": "Lambert",
       "image": "/assets/chihuahua.avif",
       "description": "drive reek Marvin compress executive Coordinator Track bluetooth",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 14
     },
     {
@@ -134,18 +134,11 @@
       "id": 20
     },
     {
-      "name": "murat",
-      "image": "/assets/chihuahua.avif",
-      "description": "askjdasldhas;k",
-      "isFavorite": true,
+      "name": "naughtyDOG13",
+      "image": "/assets/blue-heeler.png",
+      "description": "",
+      "isFavorite": false,
       "id": 21
-    },
-    {
-      "name": "new dog",
-      "image": "/assets/cowardly.png",
-      "description": "asdas",
-      "isFavorite": true,
-      "id": 22
     }
   ]
 }
