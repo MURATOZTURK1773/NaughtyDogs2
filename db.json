@@ -4,14 +4,14 @@
       "name": "Jonatan",
       "image": "/assets/boxer.png",
       "description": "Shoes after Dollar Marketing female generating Diesel",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 0
     },
     {
       "name": "Anthony",
       "image": "/assets/cowardly.png",
       "description": "plum Savings female Ghana programming solutions miniaturise",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 1
     },
     {
@@ -25,7 +25,7 @@
       "name": "Alfred",
       "image": "/assets/cowardly.png",
       "description": "Northwest DRAM henry applications South",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 5
     },
     {
@@ -139,6 +139,20 @@
       "description": "",
       "isFavorite": false,
       "id": 21
+    },
+    {
+      "name": "BROOO",
+      "image": "/assets/blue-heeler.png",
+      "description": "sSSDFSDF",
+      "isFavorite": false,
+      "id": 22
+    },
+    {
+      "name": "LLLLC",
+      "image": "/assets/dalmation.png",
+      "description": "",
+      "isFavorite": false,
+      "id": 23
     }
   ]
 }

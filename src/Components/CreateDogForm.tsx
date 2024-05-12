@@ -1,11 +1,11 @@
-import { useState, ChangeEvent, useContext } from "react";
+import { useState, ChangeEvent } from "react";
 import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
-import { DogsContext } from "../Provider/DogProvider";
 import toast from "react-hot-toast";
+import { useDogs } from "./useDogs";
 
 export const CreateDogForm = () => {
-  const { createDog } = useContext(DogsContext);
+  const { createDog } = useDogs();
   const [selectedImage, setSelectedImage] = useState(dogPictures.BlueHeeler);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

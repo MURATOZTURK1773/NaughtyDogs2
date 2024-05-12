@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from "react";
-import { TabsContent } from "../Provider/SectionProvider";
 import { ActiveTab } from "../types";
+import { DogsContext } from "../Provider/DogProvider";
 
 export const Section = ({
   label,
@@ -10,7 +10,7 @@ export const Section = ({
   children: ReactNode;
 }) => {
   const { favoritedDogsCount, unfavoritedDogsCount, tab, setTab } =
-    useContext(TabsContent);
+    useContext(DogsContext);
 
   const handleToggle = (currentTab: ActiveTab) => {
     setTab(currentTab === tab ? "none-selected" : currentTab);
